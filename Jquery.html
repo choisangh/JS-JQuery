@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>.black-bg {
+    width : 100%;
+    height : 100%;
+    position : fixed;
+    background : rgba(0,0,0,0.5);
+    z-index : 5;
+    padding: 30px;
+  }
+  .white-bg {
+    background: white;
+    border-radius: 5px;
+    padding: 30px;
+  }
+  .blind{
+    display: none;
+  } </style>
+<body>
+    <p class="hello">안녕</p>
+    <button id="login_bt">로그인</button>
+
+    <div id="menu"class="black-bg blind">
+        <div class="white-bg">
+          <h4>로그인하세요</h4>
+          <button class="btn btn-danger" id="close">닫기</button>
+        </div>
+      </div> 
+    
+</body>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script>
+    $('.hello').html('바보');
+    $('.hello').css('color','red');
+    $('.hello').addClass('show');
+    $('.hello').toggleClass('show');
+    $('.hello').on('click',function(){
+        $('.hello').hide();
+        $('.hello').fadeOut();
+
+
+    });
+    $('#login_bt').on('click',function(){
+        $('#menu').toggleClass('blind');
+
+    });
+</script>
+</html>

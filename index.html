@@ -7,14 +7,15 @@
     <title>Document</title>
     <link rel="stylesheet" href="main.css">
 </head>
-<body>
     <h1 id="hello">안녕하세요</h1>
     <div id="alert" class="alert-box">알림창
-        <button onclick="알림창열기('none')">닫기</button>
+        <button id="close">닫기</button>
     </div>
     <button onclick="알림창열기('block')">알림창 보이기</button>
-    
-
+    <input id='id' style="display:none;" value="아이디 입력하세요">
+    <input id='pw' style="display:none;" value="비밀번호 입력하세요">
+    <button onclick="ID창열기('block')">아이디창 열기</button>
+    <button onclick="PW창열기('block')">PW창 열기</button>
     <script>
         document.getElementById("hello").innerHTML = '안녕';
         document.getElementById("hello").style.color = 'red';
@@ -24,6 +25,20 @@
             document.getElementById('alert').style.display=parameter;
 
         }
+        function ID창열기(parameter){
+            document.getElementById('id').style.display=parameter;
+            
+
+        }
+        function PW창열기(parameter){
+            document.getElementById('pw').style.display=parameter;
+
+        }
+
+        document.getElementById('close').addEventListener('click',function(){ //keydown, mouseover ...
+            document.getElementById('alert').style.display='none';
+        });
+
 
     </script>
 
